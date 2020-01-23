@@ -18,8 +18,8 @@ const cssEditor = CodeMirror(cssEditorElement, {
   lineNumbers: true
 });
 
-const host = "http://localhost:3000";
-// const host = "https://www.valuesmm.com";
+// const host = "http://localhost:3000";
+const host = "https://www.valuesmm.com";
 let pageURL; // assigned on first run of buildPage
 let pageName; // assigned on first run of buildPage
 
