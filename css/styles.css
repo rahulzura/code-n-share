@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --reddish-border-color: rgb(238, 100, 100);
+  --primary-border-radius: 4px;
+  --primary-padding: 4px;
+  --secondary-padding: 8px;
+}
+
+body {
+  margin: 0;
+  background-color: #222;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 85.375em;
+  margin: 0 auto;
+}
+
+.editor-container {
+  width: 100%;
+  padding: var(--primary-padding);
+}
+
+.editor-group {
+  width: 100%;
+  border-top: 1px solid var(--reddish-border-color);
+  border-left: 1px solid var(--reddish-border-color);
+  border-top-left-radius: var(--primary-border-radius);
+}
+
+.editor-heading {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: small;
+  display: block;
+  color: #fff;
+  background-color: var(--reddish-border-color);
+  text-align: center;
+}
+
+button {
+  border-radius: var(--primary-border-radius);
+  border: none;
+  background-color: var(--reddish-border-color);
+  color: #fff;
+  margin: 1px;
+  cursor: pointer;
+}
+
+.button-div {
+  display: flex;
+  justify-content: center;
+}
+
+.iframe-div {
+  padding: 8px;
+  width: 100%;
+  height: 100%;
+}
+
+#page-iframe {
+  width: 100%;
+  height: 400px;
+  border: 1px solid #fff;
+  resize: both;
+  overflow: auto;
+}
+
+.CodeMirror {
+  font-weight: 100;
+  font-size: 1.2rem;
+}
+
+/* Extra Small */
+@media all and (min-width: 320px) {
+}
+
+/* Small */
+@media all and (min-width: 540px) {
+}
+
+/* Medium */
+@media all and (min-width: 48em) {
+  .editor-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+  .editor-group {
+    width: 49%;
+  }
+}
+
+/* Large */
+@media all and (min-width: 64em) {
+}
+
+/* Extra Large */
+@media all and (min-width: 85.375em) {
+}
+
+/* Extra Extra Large */
+@media all and (min-width: 120em) {
+}
