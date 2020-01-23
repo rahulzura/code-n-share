@@ -4,7 +4,7 @@ const pageIframe = document.querySelector("#page-iframe");
 
 const htmlEditor = CodeMirror(htmlEditorElement, {
   value:
-    "<html>\n\t<head></head>\n\t<body>\n\t\tMy name strawberry shortcake\n\t</body>\n\t</html>",
+    "<html>\n\t<head></head>\n\t<body>\n\t\tThis strawberry shortcake\n\t</body>\n\t</html>",
   mode: "htmlmixed",
   theme: "material-darker",
   lineWrapping: true,
