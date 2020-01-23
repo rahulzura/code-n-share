@@ -3,7 +3,8 @@ const cssEditorElement = document.querySelector("#css-editor");
 const pageIframe = document.querySelector("#page-iframe");
 
 const htmlEditor = CodeMirror(htmlEditorElement, {
-  value: "<html><head></head><body>My name strawberry shortcake</body></html>",
+  value:
+    "<html>\n\t<head></head>\n\t<body>\n\t\tMy name strawberry shortcake\n\t</body>\n\t</html>",
   mode: "htmlmixed",
   theme: "material-darker",
   lineWrapping: true,
@@ -11,7 +12,7 @@ const htmlEditor = CodeMirror(htmlEditorElement, {
 });
 
 const cssEditor = CodeMirror(cssEditorElement, {
-  value: "body{background-color: pink;}",
+  value: "body {\nbackground-color: pink;\n}",
   mode: "css",
   theme: "material-darker",
   lineWrapping: true,
