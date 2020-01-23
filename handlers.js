@@ -12,7 +12,7 @@ const htmlEditor = CodeMirror(htmlEditorElement, {
 });
 
 const cssEditor = CodeMirror(cssEditorElement, {
-  value: "body {\nbackground-color: pink;\n}",
+  value: "body {\n  background-color: pink;\n}",
   mode: "css",
   theme: "material-darker",
   lineWrapping: true,
