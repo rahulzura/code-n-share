@@ -4,7 +4,7 @@ const pageIframe = document.querySelector("#page-iframe");
 
 const htmlEditor = CodeMirror(htmlEditorElement, {
   value:
-    "<html>\n  <head></head>\n  <body>\n    This strawberry shortcake\n  </body>\n</html>",
+    "<html>\n  <head></head>\n  <body>\n    This is strawberry shortcake\n  </body>\n</html>",
   mode: "htmlmixed",
   theme: "material-darker",
   lineWrapping: true,
@@ -12,15 +12,14 @@ const htmlEditor = CodeMirror(htmlEditorElement, {
 });
 
 const cssEditor = CodeMirror(cssEditorElement, {
-  value: "body {\n  background-color: pink;\n}",
+  value: "body {\n  background-color: #333;\n  color: #eee;\n}",
   mode: "css",
   theme: "material-darker",
   lineWrapping: true,
   lineNumbers: true
 });
 
-// const host = "http://localhost:3000";
-const host = "https://www.valuesmm.com";
+const host = "https://hcs.rahulkum.com";
 let pageURL; // assigned on first run of buildPage
 let pageName; // assigned on first run of buildPage
 
