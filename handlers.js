@@ -35,7 +35,7 @@ function submitHandler() {
   buildPage(true);
 }
 
-function buildPage(newTab = false, firstTime = false) {
+async function buildPage(newTab = false, firstTime = false) {
   try {
     const res = await fetch(host + "/buildPage", {
       method: "post",
