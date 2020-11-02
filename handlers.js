@@ -36,26 +36,28 @@ function submitHandler() {
 }
 
 function buildPage(newTab = false, firstTime = false) {
-  fetch(host + "/buildPage", {
-    method: "post",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      htmlInput: htmlEditor.getValue(),
-      cssInput: cssEditor.getValue(),
-      pageName: pageName // pageName is undefined on the first run of buildPage
-    })
-  })
-    .then(res => res.json())
-    .then(res => {
-      if (firstTime === true) {
-        pageName = res.body.pageName; // set pageName
-        pageURL = host + "/" + pageName; // set pageURL
-        pageIframe.setAttribute("src", pageURL); // set src of iframe
-      }
-      if (newTab === true) {
-        window.open(pageURL, "_blank");
-      }
-      pageIframe.src = pageIframe.src; // refresh frame
-    })
-    .catch(err => console.log(err));
+  try {
+    const res = await fetch(host + "/buildPage", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        htmlInput: htmlEditor.getValue(),
+        cssInput: cssEditor.getValue(),
+        pageName: pageName // pageName is undefined on the first run of buildPage
+      })
+    });
+
+    const resData = await res.json();
+    if (firstTime === true) {
+      pageName = resData.body.pageName; // set pageName
+      pageURL = host + "/" + pageName; // set pageURL
+      pageIframe.setAttribute("src", pageURL); // set src of iframe
+    }
+    if (newTab === true) {
+      window.open(pageURL, "_blank");
+    }
+    pageIframe.src = pageIframe.src; // refresh frame
+  } catch (err) {
+    console.log(err)
+  }
 }
